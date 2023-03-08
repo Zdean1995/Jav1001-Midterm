@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+ This is all pretty straight forward.  Anything out of the ordinary is commented on where appropriate
+ -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,21 +16,11 @@
         android:layout_marginTop="16dp"
         android:text="@string/converterTitle"
         android:textAlignment="center"
-        android:textSize="60sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btn_convert"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Convert"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_distance_output" />
 
     <EditText
         android:id="@+id/txt_distance_input"
@@ -37,7 +30,6 @@
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toStartOf="@+id/spn_input_unit"
-        app:layout_constraintHorizontal_bias="0.613"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -46,22 +38,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Convert"
-        android:textSize="50sp"
+        android:text="@string/txt_convert"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.546"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_converter" />
 
+    <!--
+    Setting the input type to none is apperently supposed to make an edit text uninteractible but
+    that didn't work for me so I used this instead:
+    https://learnpainless.com/edittext-editable-deprecated-how-use-inputtype-android/
+    -->
     <EditText
         android:id="@+id/txt_distance_output"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="48sp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:inputType="numberDecimal"
+        android:inputType="none"
+        android:focusable="false"
         app:layout_constraintEnd_toStartOf="@+id/spn_output_unit"
-        app:layout_constraintHorizontal_bias="0.613"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -73,18 +69,16 @@
         android:entries="@array/Unit"
         app:layout_constraintBottom_toBottomOf="@+id/txt_distance_input"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txt_distance_input"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/txt_distance_input" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="to"
-        android:textSize="50sp"
+        android:text="@string/to"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_distance_input" />
 
@@ -96,7 +90,6 @@
         android:entries="@array/Unit"
         app:layout_constraintBottom_toBottomOf="@+id/txt_distance_output"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txt_distance_output"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/txt_distance_output" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
