@@ -37,7 +37,6 @@
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toStartOf="@+id/spn_input_unit"
-        app:layout_constraintHorizontal_bias="0.613"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -49,19 +48,18 @@
         android:text="Convert"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.546"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_converter" />
 
     <EditText
         android:id="@+id/txt_distance_output"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="48sp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:inputType="numberDecimal"
+        android:inputType="none"
+        android:focusable="false"
         app:layout_constraintEnd_toStartOf="@+id/spn_output_unit"
-        app:layout_constraintHorizontal_bias="0.613"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -73,8 +71,7 @@
         android:entries="@array/Unit"
         app:layout_constraintBottom_toBottomOf="@+id/txt_distance_input"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txt_distance_input"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/txt_distance_input" />
 
     <TextView
         android:id="@+id/textView3"
@@ -84,7 +81,6 @@
         android:text="to"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_distance_input" />
 
@@ -96,7 +92,6 @@
         android:entries="@array/Unit"
         app:layout_constraintBottom_toBottomOf="@+id/txt_distance_output"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txt_distance_output"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/txt_distance_output" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

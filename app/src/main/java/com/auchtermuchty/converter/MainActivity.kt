@@ -11,18 +11,24 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.txtConverter.setOnClickListener {
+            val toast = Toast.makeText(this, "boner", Toast.LENGTH_SHORT)
+            toast.show()
+        }
 
         binding.btnConvert.setOnClickListener {
-            try{
+
+            try {
                 val inputValue = binding.txtDistanceInput.text.toString().toDouble()
                 val inputDataType = getUnit(binding.spnInputUnit.selectedItem.toString())
                 val outputDataType = getUnit(binding.spnOutputUnit.selectedItem.toString())
                 val outputValue = inputValue * (inputDataType/outputDataType)
                 binding.txtDistanceOutput.setText(outputValue.toString())
 
-            } catch(exception: NullPointerException) {
+            } catch(exception: Exception) {
                 val toast = Toast.makeText(this, "Please enter an value", Toast.LENGTH_SHORT)
                 toast.show()
             }
